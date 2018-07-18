@@ -292,7 +292,7 @@ $ ./test.o		// 执行已编译的文件
 1.nginx安装源码 wget http://nginx.org/download/nginx-1.14.0.tar.gz
 2. 解压
 3. 配置PATH路径
-4.	$ ./configure --prefix=/usr/local/nginx--with-http-ssl-module
+4.	$ ./configure --prefix=/usr/local/nginx --with_http_ssl_module
 5.make
 6.make install
 -------------------
@@ -390,6 +390,6 @@ tailf FILENAME查看日志命令 tailf /var/log/secure
 通配符：
 路径中匹配文件名 *任意个字符 ?单个任意字符 []字符集合中任意一个 POSIX定义标准字符集合[:alpha:][:digit:][:upper:][:lower:][:alnum:]数字字母[:blank:]空格制表符
 ls [[:alpha:]]5
-
+touch * # 更新当前目录下所有文件的时间戳
 ```
 
