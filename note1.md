@@ -302,7 +302,7 @@ nginx -s stop
 1.wget
 2.tar xf
 3.cd nginx-1.44
-4.$ ./configure --prefix=/usr/local/nginx --with-http-ssl-module【可能出现缺少库文件安装】
+4.$ ./configure --prefix=/usr/local/nginx --with_http_ssl_module【可能出现缺少库文件安装】
 5.make && make install
 6.nginx -s stop
 7./usr/local/nginx/sbin/nginx
