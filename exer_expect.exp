@@ -1,0 +1,40 @@
+#!/usr/bin/expect
+set username [lindex $argv 0]
+set password [lindex $argv 1]
+spawn ssh $username@10.1.1.80
+expect {
+	"yes/no" {
+		send "yes\r"
+		exp_continue
+	}
+	"assword" {
+		send "$password\r"
+	}
+}
+expect "#"
+send "exit\r"
+expect eof
+send_user "All task finished!\n"
+
+#####################################
+
+#!/usr/bin/expect
+
+set ip [lindex $argv 0]
+set dir [lindex $argv 1]
+set file [lindex $argv 2]
+
+spawn ftp $ip
+expect "Name"
+send "ftp\r"
+expect "assword"
+send "\r"
+expect "ftp>"
+send "cd $dir\r"
+expect "ftp>"
+send "get $file\r"
+expect "complete"
+send "exit\r"
+expect eof
+send_user "All tasks finished!\n"
+
